@@ -16,8 +16,6 @@ public abstract class Vendable {
 
     private static final int DEFAULT_QUANTITY = 5;
 
-
-
     public Vendable(String name, BigDecimal price) {
         this.name = name;
         this.price = price;
@@ -70,12 +68,4 @@ public abstract class Vendable {
     public void setType(String type) {
         this.type = type;
     }
-
-
-
-
-
-
-
-
 }
