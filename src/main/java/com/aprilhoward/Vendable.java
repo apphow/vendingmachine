@@ -16,10 +16,16 @@ public abstract class Vendable {
 
     private static final int DEFAULT_QUANTITY = 5;
 
-    public Vendable(String name, BigDecimal price) {
+
+
+    public Vendable(String slot, String name, BigDecimal price) {
+        this.slot = slot;
         this.name = name;
         this.price = price;
         this.quantity = DEFAULT_QUANTITY;
+    }
+    public Vendable() {
+
     }
 
     public abstract String getSound();
@@ -28,9 +34,9 @@ public abstract class Vendable {
         if(this.getQuantity()> 0) {
             this.quantity--;
             return true;
-        }else {
-            return false;
-        }
+        }else if(this.getQuantity()> 5) {
+            System.out.println("OUT OF STOCK");
+        }return false;
     }
 
     public int getQuantity() {
@@ -68,4 +74,12 @@ public abstract class Vendable {
     public void setType(String type) {
         this.type = type;
     }
+
+
+
+
+
+
+
+
 }

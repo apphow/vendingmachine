@@ -2,13 +2,16 @@ package com.aprilhoward;
 
 import java.math.BigDecimal;
 
-public class Chips extends Vendable{
+public class Chip extends Vendable{
 
-    public Chips(String name, BigDecimal price) {
-    super(name, price);
-}
+    public Chip(String slot, String name, BigDecimal price) {
+        super(slot, name, price);
+
+    }
+
     @Override
     public String getSound() {
+
         return  "Crunch Crunch, Yum!";
     }
     @Override

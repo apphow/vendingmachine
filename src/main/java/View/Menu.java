@@ -5,7 +5,9 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+
 public class Menu {
+
 
     private PrintWriter out;
     private Scanner in;
@@ -15,10 +17,11 @@ public class Menu {
         this.in = new Scanner(input);
     }
 
-    public Object getChoiceFromOptions(Object[] options) {
+
+    public Object getChoiceFromOptions(Object[] options, Purchase purchase) {
         Object choice = null;
         while (choice == null) {
-            displayMenuOptions(options);
+            displayMenuOptions(options, purchase);
             choice = getChoiceFromUserInput(options);
         }
         return choice;
@@ -41,12 +44,15 @@ public class Menu {
         return choice;
     }
 
-    private void displayMenuOptions(Object[] options) {
+    private void displayMenuOptions(Object[] options, Purchase purchase) {
         out.println();
         for (int i = 0; i < options.length; i++) {
             int optionNum = i + 1;
             out.println(optionNum + ") " + options[i]);
         }
+        out.println();
+        out.print("Current Money Provided: $"+ purchase.getCurrentMoney());
+        out.println();
         out.print("\nPlease choose an option >>> ");
         out.flush();
     }

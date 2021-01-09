@@ -2,14 +2,16 @@ package com.aprilhoward;
 
 import java.math.BigDecimal;
 
-public class Drinks extends Vendable{
+public class Drink extends Vendable{
 
-    public Drinks(String name, BigDecimal price) {
-        super(name, price);
+    public Drink(String slot, String name, BigDecimal price) {
+        super(slot, name, price);
+        // TODO Auto-generated constructor stub
     }
 
     @Override
     public String getSound() {
+        // TODO Auto-generated method stub
         return "Glug Glug, Yum!";
     }
     @Override
