@@ -31,9 +31,11 @@ public class VendingMachineCLI {
                 String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS, purchase);
 
                 if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
-                    System.out.println("Slot ID");
+                    System.out.println();
+                    System.out.printf("%-8s%-23s%-22s\n", "SLOT", "ITEM", "PRICE");
+                    System.out.println("----------------------------------------");
                     for(Vendable v : inventory.getAllItems()) {
-                        System.out.println(v.getSlot()+"\t"+v.getName()+"\t\t\t"+v.getPrice());
+                        System.out.printf("%-8s%-23s%-22s\n",v.getSlot(), v.getName(),v.getPrice());
                     }
                 } else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
                     makePurchase();
@@ -50,10 +52,11 @@ public class VendingMachineCLI {
                     purchase.feedMoney();
                     makePurchase();
                 } else if (choice.equals(SELECT_PRODUCT_OPTION)) {
-
-                    System.out.println("Slot ID");
+                    System.out.println();
+                    System.out.printf("%-8s%-23s%-22s\n","SLOT","ITEM","PRICE");
+                    System.out.println("--------------------------------------");
                     for(Vendable v : inventory.getAllItems()) {
-                        System.out.println(v.getSlot()+"\t"+v.getName()+"\t\t\t"+v.getPrice());
+                        System.out.printf("%-8s%-23s%-22s\n",v.getSlot(), v.getName(),v.getPrice());
                     }
                     purchase.buySomething(this.inventory);
 

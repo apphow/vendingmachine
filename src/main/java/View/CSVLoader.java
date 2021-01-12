@@ -37,7 +37,7 @@ public class CSVLoader {
         Inventory i = new Inventory();
 
         // read the file
-        try(Scanner fileScanner = new Scanner(new File("/Users/aprilhoward/Desktop/Zippy/vendingmachine/src/main/java/vendingmachine.csv"))){
+        try(Scanner fileScanner = new Scanner(new File("src/main/java/vendingmachine.csv"))){
             // for each item in the file
 
             int lineNumber = 1;
