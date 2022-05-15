@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class CandyTest {
     /**
-     * Methods under test:
+     * Methods tests
      *
      * <ul>
      *   <li>{@link Candy#Candy(String, String, BigDecimal)}
