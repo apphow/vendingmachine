@@ -41,9 +41,10 @@ public class VendingMachineCLI {
                     makePurchase();
 
                 } else if(choice.equals(MAIN_MENU_EXIT)) {
-                    System.exit(1);
+                   run();
                 }
             }
+
         }
         public void makePurchase() {
             while (true) {

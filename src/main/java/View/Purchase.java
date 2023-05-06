@@ -7,9 +7,11 @@ import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+import static View.VendingMachineCLI.main;
+
 public class Purchase {
     private BigDecimal currentMoney;
-
+    VendingMachineCLI vendingMachineCLI;
     Scanner userInput = new Scanner(System.in);
     Inventory inventory = new Inventory();
 
@@ -68,11 +70,12 @@ public class Purchase {
 
     // method to log transaction
     public void makeChange() {
+
         BigDecimal quarter = BigDecimal.valueOf(.25);
         BigDecimal dime = BigDecimal.valueOf(.1);
         BigDecimal nickel = BigDecimal.valueOf(.05);
         System.out.println();
-        System.out.println("Here comes your change:");
+        System.out.println("Here comes your change. You'll receive: ");
 
         BigDecimal quarterNext = currentMoney.subtract(currentMoney.multiply(quarter));
         BigDecimal q = quarterNext.divide(quarter);
@@ -86,10 +89,10 @@ public class Purchase {
         BigDecimal n = nickelNext.divide(nickel);
         System.out.println(n.intValue() + " Nickels");
 
-
-
+        main(null);
 
     }
+
 
     public BigDecimal getCurrentMoney() {
         return currentMoney;
